@@ -1,0 +1,124 @@
+syntax on
+set nocompatible               " be iMproved
+set paste
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+"Bundle 'tpope/vim-pathogen'
+"Bundle 'klen/python-mode'
+Bundle 'sontek/rope-vim'
+Bundle 'https://github.com/scrooloose/nerdtree.git'
+map <F6> :NERDTreeToggle<CR>
+imap <F6> <ESC>:NERDTreeToggle<CR>
+
+" Disable pylint checking every save
+" let g:pymode_lint_write = 0
+
+" map <F4> :PyLintAuto<CR>
+
+filetype off
+
+"call pathogen#infect()
+"call pathogen#helptags()
+
+filetype plugin indent on
+
+Bundle 'vim-scripts/pep8'
+"Bundle 'orenhe/pylint.vim'
+Bundle 'Solarized' 
+Bundle 'minibufexpl.vim'
+Bundle 'desertEx' 
+colorscheme desertEx
+
+Bundle 'vim-scripts/matrix.vim--Yang'
+
+
+
+" Rope AutoComplete
+let ropevim_vim_completion = 1
+let ropevim_extended_complete = 1
+let ropevim_enable_shortcuts = 1
+"let g:ropevim_autoimport_modules = ["os.*","traceback","django.*", "xml.etree"]
+imap <c-l> <C-R>=RopeCodeAssistInsertMode()<CR>
+"imap <buffer><Tab> <M-/>
+
+
+
+" for 256 color
+set t_Co=256
+set t_AB=[48;5;%dm
+set t_AF=[38;5;%dm
+
+
+nnoremap <silent> <D-Down> :bn<CR>
+nnoremap <silent> <D-Up> :bp<CR>
+
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
+
+" set comments as c 
+nmap c ^i#<Esc>j
+
+
+set bsdir=buffer
+"set autochdir
+set enc=utf-8
+set fenc=utf-8
+set fencs=utf-8,ucs-bom,cp936,gb18030,gbk,gb2312
+set fileencodings=utf-8,ucs-bom,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set hlsearch
+set fileformat=unix
+map yab :'a,'by<cr>
+
+
+set number
+set hlsearch
+set nobackup
+set ignorecase
+set ruler
+set wildmenu
+set foldlevel=0
+let g:calendar_mark = 'right'
+
+set ru
+set nocp
+
+"got a flash but not a beep
+set vb
+
+"set list
+set listchars=tab:>-,trail:-
+set autoindent
+set backspace=indent,eol,start
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set textwidth=0
+
+set smarttab
+set expandtab
+set smartindent
+set incsearch
+
+" auto reload vimrc when editing it
+"autocmd! bufwritepost .vimrc source ~/.vimrc
+
+
+" Limit max line number
+if exists('+colorcolumn') 
+ au BufWinEnter *.py set colorcolumn=80
+else
+ au BufWinEnter *.py let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
+
+
+" python syntax
+Bundle 'python.vim--Vasiliev'
