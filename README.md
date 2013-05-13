@@ -3,7 +3,7 @@
 
 1, Get the configuration:
 
-    git clone https://github.com/rmrf/vimbackup.git  ~/.vim
+    git clone https://github.com/rmrf/vimrc.git  ~/.vim
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 2, Create symlinks:
