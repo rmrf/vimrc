@@ -146,19 +146,7 @@ Bundle 'minibufexpl.vim'
 Bundle 'desertEx'
 Bundle 'Solarized'
 "Bundle 'davidhalter/jedi-vim'
-Bundle 'nvie/vim-flake8'
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle required!
-Bundle 'gmarik/vundle'
-
-" Colorscheme management
-Bundle 'desertEx'
-Bundle 'Solarized'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'nvie/vim-flake8'
+"Bundle 'nvie/vim-flake8'
 
 """"""""""""""""""""""""""""""""""""
 colorscheme desertEx
