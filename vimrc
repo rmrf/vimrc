@@ -8,11 +8,13 @@ nmap c ^i#<Esc>j
 set foldmethod=indent
 set foldlevel=99
 
+" ### NOTE, this conflict with minibufexpl's navigation
+" ### so I disabled it here 
 " enlarge or shrink current vplit/horizonal window
-nnoremap <C-l> :vertical resize +4<cr>
-nnoremap <C-h> :vertical resize -4<cr>
-nnoremap <C-j> :resize +4<cr>
-nnoremap <C-k> :resize -4<cr>
+"nnoremap <C-l> :vertical resize +4<cr>
+"nnoremap <C-h> :vertical resize -4<cr>
+"nnoremap <C-j> :resize +4<cr>
+"nnoremap <C-k> :resize -4<cr>
 "
 " for 256 color
 set t_Co=256
@@ -58,7 +60,10 @@ set laststatus=2
 "autocmd BufWritePost *.py call Flake8()
 map <F2> :vsplit<CR>
 map <F5> :PymodeLintAuto<CR>
-map <silent> <F3> :Gstatus<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" Github
+"map <silent> <F3> :Gstatus<CR>
 
 let g:SuperTabDefaultCompletionType = "context"
 
@@ -70,9 +75,9 @@ let g:SuperTabDefaultCompletionType = "context"
 map <F2> :vsplit<CR>
 map <silent> <F3> :Gstatus<CR>
 
-"---------------------------------------------------------------------------
+"---------------------------------------------
 " ENCODING SETTINGS
-"---------------------------------------------------------------------------
+"---------------------------------------------
 set encoding=utf-8
 set termencoding=utf-8
 set fileencoding=utf-8
@@ -133,20 +138,26 @@ let g:pymode_rope_lookup_project = 0
 " Bundle Section
 """"""""""""""""""""""""""""""""""""
 
+" let Vundle manage Vundle required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
-" let Vundle manage Vundle required!
 Bundle 'gmarik/vundle'
+
 Bundle 'klen/python-mode'
 Bundle 'tpope/vim-fugitive'
-Bundle 'minibufexpl.vim'
 
-" Colorscheme management
-Bundle 'desertEx'
-Bundle 'Solarized'
 "Bundle 'davidhalter/jedi-vim'
 "Bundle 'nvie/vim-flake8'
 
 """"""""""""""""""""""""""""""""""""
+Bundle 'minibufexpl.vim'
+let g:miniBufExplMapWindowNavVim = 1 
+let g:miniBufExplMapWindowNavArrows = 1 
+let g:miniBufExplMapCTabSwitchBufs = 1 
+let g:miniBufExplModSelTarget = 1 
+
+""""""""""""""""""""""""""""""""""""
+" Colorscheme management
+Bundle 'desertEx'
 colorscheme desertEx
+Bundle 'Solarized'
