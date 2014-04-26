@@ -11,6 +11,8 @@
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/gvimrc ~/.gvimrc
 
+    sudo pip install flake8
+
 3, run vim, then install related bundles
 
     :BundleInstall

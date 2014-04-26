@@ -50,7 +50,6 @@ syntax on                    " syntax highlighing
 filetype on                  " try to detect filetypes
 filetype plugin indent on    " enable loading indent file for filetype
 
-" indent lines
 vnoremap < <gv
 vnoremap > >gv
 set laststatus=2
@@ -66,6 +65,10 @@ let g:SuperTabDefaultCompletionType = "context"
 "set textwidth=80
 "set colorcolumn=+1
 "hi ColorColumn guibg=#2d2d2d ctermbg=246
+
+"autocmd BufWritePost *.py call Flake8()
+map <F2> :vsplit<CR>
+map <silent> <F3> :Gstatus<CR>
 
 "---------------------------------------------------------------------------
 " ENCODING SETTINGS
@@ -145,3 +148,17 @@ Bundle 'Solarized'
 "Bundle 'davidhalter/jedi-vim'
 Bundle 'nvie/vim-flake8'
 
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle required!
+Bundle 'gmarik/vundle'
+
+" Colorscheme management
+Bundle 'desertEx'
+Bundle 'Solarized'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'nvie/vim-flake8'
+
+""""""""""""""""""""""""""""""""""""
+colorscheme desertEx
