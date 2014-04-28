@@ -132,11 +132,13 @@ let g:pymode_doc_key = 'K'
 " Load run code plugin
 let g:pymode_run = 0
 
-let g:pymode_rope_completion_bind = '<C-,>'
+"let g:pymode_rope_completion_bind = '<C-Space>'
 let g:pymode_rope_completion = 1
 let g:pymode_rope_complete_on_dot = 1
 let g:pymode_rope_guess_project = 0
 let g:pymode_rope_lookup_project = 0
+
+
 
 """"""""""""""""""""""""""""""""""""
 " Bundle Section

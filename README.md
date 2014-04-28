@@ -20,3 +20,21 @@
     :BundleInstall
 
 done!
+
+
+Usage Tips (some of them):
+----------
+Common Tips
+---
+
+    1, press 'c' to comment current line with '#'
+    2, 
+    ':vs newfile.txt' to vertical split window for edit, 'Ctrl-h and Ctrl-l' to switch between window left and right.
+    ':sp newfile.txt' to split window for edit,'Ctrl-k and Ctrl-j' to switch between windows top and down
+    3, There is buffer tab on top of the editer widnow, use ':b4' to change number 4 buffer
+    4, 'z-M' to folding all, 'z-R' to expand all folding, 'z-o' to open a fold at cursor.
+
+Edit Python Files:
+---
+    1,  Press 'F5' to auto adjust current editing python file's format with PEP8
+    2,  'Ctrl-x, Ctrl-o' will auto complete python after you write a . of a class (during insert mode)
