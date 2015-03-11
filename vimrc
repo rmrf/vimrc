@@ -21,6 +21,8 @@ set t_Co=256
 set t_AB=[48;5;%dm
 set t_AF=[38;5;%dm
 
+
+set cursorcolumn 
 set expandtab
 set tabstop=4
 set shiftwidth=4
