@@ -52,7 +52,26 @@ vnoremap < <gv
 vnoremap > >gv
 set laststatus=2
 
-
-"autocmd BufWritePost *.py call Flake8()
-map <F2> :vsplit<CR>
-map <F5> :PymodeLintAuto<CR>
+" auto apply the pep8 format for the src code
+" install pep8 and autopep8 first, you can use pip to install them
+map <F4> :call FormartSrc()<CR>
+"define FormartSrc()                                                               
+func FormartSrc()                                                               
+    exec "w"                                                                    
+    if &filetype == 'c'                                                         
+        exec "!astyle --style=ansi --one-line=keep-statements -a --suffix=none %"
+    elseif &filetype == 'cpp' || &filetype == 'hpp'                             
+        exec "r !astyle --style=ansi --one-line=keep-statements -a --suffix=none %> /dev/null 2>&1"
+    elseif &filetype == 'perl'                                                  
+        exec "!astyle --style=gnu --suffix=none %"                              
+    elseif &filetype == 'py'||&filetype == 'python'                             
+        exec "r !autopep8 -i --aggressive %"                                    
+    elseif &filetype == 'java'                                                  
+        exec "!astyle --style=java --suffix=none %"                             
+    elseif &filetype == 'jsp'                                                   
+        exec "!astyle --style=gnu --suffix=none %"                              
+    elseif &filetype == 'xml'                                                   
+        exec "!astyle --style=gnu --suffix=none %"                              
+    endif                                                                       
+    exec "e! %"                                                                 
+endfunc
