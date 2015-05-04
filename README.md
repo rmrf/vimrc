@@ -1,8 +1,21 @@
 
-How to install
----
+# How to install
+
+## use short version (no need to install plugin)
 
 * **Please backup your configuration before run bellow command**
+
+* Get the configuration:
+
+        git clone https://github.com/rmrf/vimrc.git  ~/.vim
+
+        ln -s ~/.vim/vimrc_short_version ~/.vimrc
+
+
+## use full version (need install plugin)
+
+* **Please backup your configuration before run bellow command**
+
 
 * Get the configuration:
 
@@ -27,8 +40,7 @@ How to install
 done!
 
 
-Usage Tips (some of them):
----
+# Usage Tips (for version, some of them):
 
 * Common Tips
 

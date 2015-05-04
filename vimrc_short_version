@@ -4,19 +4,8 @@ set nocompatible               " be iMproved
 " press c to comment current line 
 nmap c ^i#<Esc>j
 
-
 set foldmethod=indent
 set foldlevel=99
-
-" ### NOTE, this conflict with minibufexpl's navigation
-" ### so I disabled it here 
-" enlarge or shrink current vplit/horizonal window
-"nnoremap <C-l> :vertical resize +4<cr>
-"nnoremap <C-h> :vertical resize -4<cr>
-"nnoremap <C-j> :resize +4<cr>
-"nnoremap <C-k> :resize -4<cr>
-"
-
 set expandtab
 set tabstop=4
 set shiftwidth=4
