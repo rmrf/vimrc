@@ -7,9 +7,11 @@
 
 * Get the configuration:
 
-        git clone https://github.com/rmrf/vimrc.git  ~/.vim
+        git clone https://github.com/rmrf/vimrc.git  ~/vimrc
 
-        ln -s ~/.vim/vimrc_short_version ~/.vimrc
+        ln -s ~/vimrc/vimrc_short_version ~/.vimrc
+        ln -s ~/vimrc/bash/linux_bash_profile ~/.bash_profile
+        ln -s ~/vimrc/tmux/tmux.conf ~/.tmux.conf
 
 
 ## use full version (need install plugin)
