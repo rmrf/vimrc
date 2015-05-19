@@ -1,9 +1,13 @@
 
 ### Bash git completion
 
-Just add bellow line into .bashrc or .bash_profile
+First backup your ~/.bash_profile 
+    
+    cp ~/.bash_profile ~/.bash_profile_BAK
 
-    source ~/vimrc/bash/git-completion.bash
+Then link the linux_bash_profile to ~/.bash_profile
+
+    ln -s ~/vimrc/bash/linux_bash_profile ~/.bash_profile
 
 btw, you can always download the latest  git-completion.bash file with bellow command:
 
