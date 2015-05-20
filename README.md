@@ -8,7 +8,7 @@
 * Get the configuration:
 
         git clone https://github.com/rmrf/vimrc.git  ~/vimrc
-
+        cd ~
         unlink ~/.vimrc; ln -s ~/vimrc/vimrc_short_version ~/.vimrc
         unlink ~/.bash_profile; ln -s ~/vimrc/bash/linux_bash_profile ~/.bash_profile
         unlink ~/.tmux.conf; ln -s ~/vimrc/tmux/tmux.conf ~/.tmux.conf
