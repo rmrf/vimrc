@@ -19,4 +19,4 @@ nmap <C-v> "+gP
 
 "set guifont=Bitstream\ Vera\ Sans\ Mono:h15
 set guifont=Menlo\ Regular:h17
-colorschem desertEx
+colorschem desert

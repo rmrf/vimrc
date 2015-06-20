@@ -64,3 +64,32 @@ func FormartSrc()
     endif                                                                       
     exec "e! %"                                                                 
 endfunc
+
+
+
+"---------------------------------------------
+" ENCODING SETTINGS
+"---------------------------------------------
+set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8,ucs-bom,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set fileformat=unix
+
+
+fun! ViewUTF8()
+    set encoding=utf-8
+    set termencoding=big5
+endfun
+
+fun! UTF8()
+    set encoding=utf-8
+    set termencoding=big5
+    set fileencoding=utf-8
+    set fileencodings=ucs-bom,big5,utf-8,latin1
+endfun
+
+fun! Big5()
+    set encoding=big5
+    set fileencoding=big5
+endfun
