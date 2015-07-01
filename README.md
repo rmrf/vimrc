@@ -33,7 +33,6 @@
 * Create symlinks:
 
         ln -s ~/.vim/vimrc_jedi ~/.vimrc
-        ln -s ~/.vim/gvimrc ~/.gvimrc
 
 * run vim, then install related bundles
 

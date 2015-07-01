@@ -1,3 +1,33 @@
+"---------------------------------------------
+" Vundle Part
+"---------------------------------------------
+set nocompatible
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+filetype plugin indent on
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'davidhalter/jedi-vim'
+"Plugin 'Lokaltog/powerline' , {'rtp': 'powerline/bindings/vim/'}
+Plugin 'scrooloose/nerdtree'
+Plugin 'kreeger/benlight'
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'sjl/badwolf'
+
+
+
+call vundle#end()            " required
+
+"---------------------------------------------
+
+
 set paste
 
 " press c to comment current line 
@@ -102,32 +132,10 @@ fun! Big5()
 endfun
 
 
-"---------------------------------------------
-" Vundle Part
-"---------------------------------------------
-set nocompatible
-filetype off
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-filetype plugin indent on
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'Lokaltog/powerline' , {'rtp': 'powerline/bindings/vim/'}
-Plugin 'scrooloose/nerdtree'
-
-
-
-call vundle#end()            " required
 filetype plugin indent on    " required
 
 map <F2> :NERDTreeToggle<CR>
+colorscheme badwolf
 
 let g:jedi#goto_command = ""
 let g:jedi#goto_assignments_command = "<leader>g"
@@ -138,3 +146,56 @@ let g:jedi#completions_command = "<C-x>"
 let g:jedi#rename_command = "<leader>r"
 
 "let g:jedi#completions_enabled = 0
+
+"---------------------------------------------
+" ENCODING SETTINGS
+"---------------------------------------------
+set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8,ucs-bom,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set fileformat=unix
+
+
+fun! ViewUTF8()
+    set encoding=utf-8
+    set termencoding=big5
+endfun
+
+fun! UTF8()
+    set encoding=utf-8
+    set termencoding=big5
+    set fileencoding=utf-8
+    set fileencodings=ucs-bom,big5,utf-8,latin1
+endfun
+
+fun! Big5()
+    set encoding=big5
+    set fileencoding=big5
+endfun
+
+
+" MacVim GUI mode
+if has("gui_macvim")
+    "set guifont=Monaco:h14
+    set guifontwide=Menlo\ Regular:h17
+    set guifont=Menlo\ Regular:h17
+    set guioptions=aAce
+    set fuoptions=maxvert,maxhorz
+    set noballooneval
+    
+    " resize current buffer by +/- 5
+    nnoremap <M-Right> :vertical resize +5<CR>
+    nnoremap <M-Left>  :vertical resize -5<CR>
+    nnoremap <M-Up>    :resize -5<CR>
+    nnoremap <M-Down>  :resize +5<CR>
+    
+    " Command+Option+Right for next
+    map <D-M-Right> :tabn<CR>
+    " Command+Option+Left for previous
+    map <D-M-Left> :tabp<CR>
+    
+    " Automatically resize splits
+    " when resizing MacVim window
+    autocmd VimResized * wincmd =
+endif
