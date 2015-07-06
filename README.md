@@ -24,7 +24,7 @@
 
         cd ~; mv .vim .vimBackup
 
-        git clone https://github.com/rmrf/vimrc.git  ~/.vim
+        git clone https://github.com/rmrf/vimrc.git  ~/vimrc
 
         mkdir -p  ~/.vim/bundle; 
 
@@ -32,7 +32,7 @@
 
 * Create symlinks:
 
-        ln -s ~/.vim/vimrc_jedi ~/.vimrc
+        ln -s ~/vimrc/vimrc_jedi ~/.vimrc
 
 * run vim, then install related bundles
 
