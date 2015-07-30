@@ -20,6 +20,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'kreeger/benlight'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'sjl/badwolf'
+"Plugin 'vim-ruby/vim-ruby'
 
 
 
@@ -199,3 +200,7 @@ if has("gui_macvim")
     " when resizing MacVim window
     autocmd VimResized * wincmd =
 endif
+
+
+" for ruby
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
