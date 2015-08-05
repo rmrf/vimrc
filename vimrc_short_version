@@ -93,3 +93,6 @@ fun! Big5()
     set encoding=big5
     set fileencoding=big5
 endfun
+
+" for ruby
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
