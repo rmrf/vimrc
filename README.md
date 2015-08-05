@@ -13,7 +13,7 @@
         unlink ~/.bash_profile; ln -s ~/vimrc/bash/linux_bash_profile ~/.bash_profile
         unlink ~/.tmux.conf; ln -s ~/vimrc/tmux/tmux.conf ~/.tmux.conf
         unlink ~/.pip/pip.conf; ln -s ~/vimrc/pip/pip.conf ~/.pip/pip.conf
-        unlink ~/.irbrc; ln -s ~/ruby/docirbrc ~/.irbrc
+        unlink ~/.irbrc; ln -s ~/vimrc/ruby/dotirbrc ~/.irbrc
 
 
 ## use full version (need install plugin)
