@@ -12,7 +12,7 @@
         unlink ~/.vimrc; ln -s ~/vimrc/vimrc_short_version ~/.vimrc
         unlink ~/.bash_profile; ln -s ~/vimrc/bash/linux_bash_profile ~/.bash_profile
         unlink ~/.tmux.conf; ln -s ~/vimrc/tmux/tmux.conf ~/.tmux.conf
-        unlink ~/.pip/pip.conf; ln -s ~/vimrc/pip/pip.conf ~/.pip/pip.conf
+        mkdir -p ~/.pip; unlink ~/.pip/pip.conf; ln -s ~/vimrc/pip/pip.conf ~/.pip/pip.conf
         unlink ~/.irbrc; ln -s ~/vimrc/ruby/dotirbrc ~/.irbrc
 
 
