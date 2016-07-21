@@ -1,4 +1,4 @@
-"source ~/.vimrc
+source ~/.vimrc
 
 
 "nnoremap <silent> <D-Down> :bn<CR>

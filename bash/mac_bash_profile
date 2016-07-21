@@ -65,19 +65,12 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 alias vi="$HOME/Tools/sh/bin/mvim -v"
 alias vim="$HOME/Tools/sh/bin/mvim -v"
 alias lst="find .|sed -e 's#[^/]*/#|_ #g;s#_ |#  |#g;'"
-alias lx="$HOME/Program/Python/xunlei-lixian/lixian_cli.py"
-alias i="ipython qtconsole --pylab=inline"
-alias os='source /Users/yoqian/eBay/OpenStratus_ENV/mycli/openstratus_env'
 
 addpath ()
 {
     PATH=$1:$PATH
 }
 
-
-# add JAVA
-PATH="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin:${PATH}"
-export PATH
 
 # Setting PATH for EPD_free-7.3-2
 # The orginal version is saved in .bash_profile.pysave
@@ -89,9 +82,6 @@ export PATH
 export PATH="/usr/local/heroku/bin:$PATH"
 source ~/BashEnv/joyent_env.sh
 
-# Added by Canopy installer on 2013-05-12
- #source /Users/yoqian/Library/Enthought/Canopy_32bit/User/bin/activate
-
 
 if [ -f /usr/local/etc/bash_completion ]; then
 . /usr/local/etc/bash_completion
@@ -99,8 +89,8 @@ fi
 
 
 # boot2docker 's docker
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/yoqian/.docker/boot2docker-vm
+#export DOCKER_HOST=tcp://192.168.59.103:2376
+#export DOCKER_CERT_PATH=/Users/yoqian/.docker/boot2docker-vm
 
 # Google gsutil
 export PATH=$PATH:/Users/yoqian/Google/gsutil
@@ -112,7 +102,15 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
 # DotNet Core in MacOS
-source /Users/yoqian/.dnx/dnvm/dnvm.sh
+#source /Users/yoqian/.dnx/dnvm/dnvm.sh
 
 # VS Code
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+
+
+
+# ssh config hosts autocompletion
+function _ssh_completion() {
+  perl -ne 'print "$1 " if /^Host (.+)$/' ~/.ssh/config
+}
+complete -W "$(_ssh_completion)" ssh

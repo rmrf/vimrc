@@ -93,3 +93,7 @@ source ~/vimrc/bash/git-completion.bash
 export TERM="xterm-256color"
 PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \[\033[0;31m\]$(__git_ps1 "(%s)") \[\033[00m\]\$ '
 
+function _ssh_completion() {
+  perl -ne 'print "$1 " if /^Host (.+)$/' ~/.ssh/config
+}
+complete -W "$(_ssh_completion)" ssh

@@ -21,12 +21,22 @@ Plugin 'kreeger/benlight'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'sjl/badwolf'
 "Plugin 'vim-ruby/vim-ruby'
+Plugin 'fatih/vim-go'
+"https://github.com/fatih/vim-go, :GoInstallBinaries  to install necessary binaries
+
 
 
 
 call vundle#end()            " required
 
 "---------------------------------------------
+" for Golang
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
 
 set paste
@@ -138,14 +148,14 @@ filetype plugin indent on    " required
 map <F2> :NERDTreeToggle<CR>
 colorscheme badwolf
 
-let g:jedi#goto_command = ""
-let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = "<leader>d"
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>n"
-let g:jedi#completions_command = "<C-x>"
-let g:jedi#rename_command = "<leader>r"
-
+"let g:jedi#goto_command = ""
+"let g:jedi#goto_assignments_command = "<leader>g"
+"let g:jedi#goto_definitions_command = "<leader>d"
+"let g:jedi#documentation_command = "K"
+"let g:jedi#usages_command = "<leader>n"
+"let g:jedi#completions_command = "<C-x>"
+"let g:jedi#rename_command = "<leader>r"
+"
 "let g:jedi#completions_enabled = 0
 
 "---------------------------------------------
@@ -200,7 +210,3 @@ if has("gui_macvim")
     " when resizing MacVim window
     autocmd VimResized * wincmd =
 endif
-
-
-" for ruby
-autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
