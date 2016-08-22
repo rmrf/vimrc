@@ -117,8 +117,14 @@ filetype plugin indent on
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'sjl/badwolf'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 call vundle#end()            " required
 
 map <F2> :NERDTreeToggle<CR>
 colorscheme badwolf
+
+
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+let g:vim_markdown_folding_style_pythonic = 1

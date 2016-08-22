@@ -67,8 +67,8 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 # git lg
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 
-alias vi="$HOME/Tools/sh/bin/mvim -v"
-alias vim="$HOME/Tools/sh/bin/mvim -v"
+alias vi="/usr/local/Cellar/macvim/7.4-104/bin/mvim -v"
+alias vim=vi
 alias lst="find .|sed -e 's#[^/]*/#|_ #g;s#_ |#  |#g;'"
 
 addpath ()
@@ -110,7 +110,6 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 #source /Users/yoqian/.dnx/dnvm/dnvm.sh
 
 # VS Code
-code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 
 
@@ -119,3 +118,24 @@ function _ssh_completion() {
   perl -ne 'print "$1 " if /^Host (.+)$/' ~/.ssh/config
 }
 complete -W "$(_ssh_completion)" ssh
+
+# Google gsutil
+export PATH=$PATH:/Users/yoqian/Google/gsutil
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
+
+
+
+# Golang
+export GOROOT=/usr/local/go  
+export GOPATH=~/gocode
+
+[[ -s "/Users/yoqian/.gvm/scripts/gvm" ]] && source "/Users/yoqian/.gvm/scripts/gvm"
+
+# Docker
+# export DOCKER_HOST=tcp://192.168.0.8:2375
+
