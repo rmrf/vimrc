@@ -66,6 +66,11 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 
 # git lg
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+git config --global alias.st 'status --short --branch'
+git config --global alias.stsh 'stash --keep-index'
+git config --global alias.staash 'stash --include-untracked'
+git config --global alias.staaash 'stash --all'
+git config --global alias.commend 'commit --amend --no-edit'
 
 alias vi="/usr/local/Cellar/macvim/7.4-104/bin/mvim -v"
 alias vim=vi
