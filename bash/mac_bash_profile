@@ -45,8 +45,6 @@ export LESS_TERMCAP_ue=$'\E[38;5;231m'
 export LESS_TERMCAP_us=$'\E[38;5;167m'
 
 
-export s="$HOME/Program/TS/gitorious/Testsites"
-export d=$s/testsites
 alias m="open -a MplayerX"
 
 
@@ -58,7 +56,7 @@ export COMMAND_MODE
 
 
 # some other PATH, which maybe not in used currently
-export PATH=$PATH:/Users/yoqian/Library/Python/2.7/bin:/usr/local/git/bin:/opt/tools/bin:/opt/local/bin:/opt/local/sbin:/Users/yoqian/jython2.5.3/bin
+export PATH=$PATH:/Users/yoqian/Library/Python/2.7/bin:/usr/local/git/bin:/opt/tools/bin:/opt/local/bin:/opt/local/sbin
 
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
@@ -70,7 +68,8 @@ git config --global alias.st 'status --short --branch'
 git config --global alias.stsh 'stash --keep-index'
 git config --global alias.staash 'stash --include-untracked'
 git config --global alias.staaash 'stash --all'
-git config --global alias.commend 'commit --amend --no-edit'
+#git config --global alias.commend 'commit --amend --no-edit'
+alias gitl="git lg| less -R"
 
 alias vi="/usr/local/Cellar/macvim/7.4-104/bin/mvim -v"
 alias vim=vi

@@ -4,9 +4,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# git lg
-git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
-
 TOOLS_SHELL="$HOME/Tools/sh"
 PATH=/Developer/usr/bin:/usr/local/bin:/usr/local/sbin:$PATH:${TOOLS_SHELL}/bin:${TOOLS_SHELL}/boxes
 
@@ -88,10 +85,21 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+
 source ~/vimrc/bash/git-completion.bash
 
 export TERM="xterm-256color"
 PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \[\033[0;31m\]$(__git_ps1 "(%s)") \[\033[00m\]\$ '
+
+
+# git lg
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+git config --global alias.st 'status --short --branch'
+git config --global alias.stsh 'stash --keep-index'
+git config --global alias.staash 'stash --include-untracked'
+git config --global alias.staaash 'stash --all'
+#git config --global alias.commend 'commit --amend --no-edit'
+alias gitl="git lg| less -R"
 
 function _ssh_completion() {
   perl -ne 'print "$1 " if /^Host (.+)$/' ~/.ssh/config
