@@ -98,3 +98,33 @@ endfun
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 syntax on
 
+
+"---------------------------------------------
+" Vundle Part
+"---------------------------------------------
+set nocompatible
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+filetype plugin indent on
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'sjl/badwolf'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
+call vundle#end()            " required
+
+map <F2> :NERDTreeToggle<CR>
+colorscheme badwolf
+
+
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+let g:vim_markdown_folding_style_pythonic = 1
