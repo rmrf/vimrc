@@ -71,7 +71,8 @@ git config --global alias.staaash 'stash --all'
 #git config --global alias.commend 'commit --amend --no-edit'
 alias gitl="git lg| less -R"
 
-alias vi="/usr/local/Cellar/macvim/7.4-104/bin/mvim -v"
+#alias vi="/usr/local/Cellar/macvim/7.4-104/bin/mvim -v"
+alias vi="/usr/local/bin/vim"
 alias vim=vi
 alias lst="find .|sed -e 's#[^/]*/#|_ #g;s#_ |#  |#g;'"
 
@@ -110,11 +111,6 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
-# DotNet Core in MacOS
-#source /Users/yoqian/.dnx/dnvm/dnvm.sh
-
-# VS Code
-
 
 
 # ssh config hosts autocompletion
@@ -142,4 +138,8 @@ export GOPATH=~/gocode
 
 # Docker
 # export DOCKER_HOST=tcp://192.168.0.8:2375
+
+# Arc
+export PATH=$PATH:~/Tools/arcanist/bin
+
 
