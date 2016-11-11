@@ -134,12 +134,13 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 export GOROOT=/usr/local/go  
 export GOPATH=~/gocode
 
-[[ -s "/Users/yoqian/.gvm/scripts/gvm" ]] && source "/Users/yoqian/.gvm/scripts/gvm"
+#[[ -s "/Users/yoqian/.gvm/scripts/gvm" ]] && source "/Users/yoqian/.gvm/scripts/gvm"
 
 # Docker
 # export DOCKER_HOST=tcp://192.168.0.8:2375
 
 # Arc
 export PATH=$PATH:~/Tools/arcanist/bin
+export PATH=$PATH:$GOPATH/bin
 
 
