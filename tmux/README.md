@@ -6,7 +6,7 @@ such as:
     
     ln -s ~/vimrc/tmux/tmux.conf ~/.tmux.conf
 
-## Shortcut Reference Now a Ctrl-b (`) options reference:
+## Shortcut Reference Now a Ctrl-b or (`) options reference:
 
 #### Basics
 
@@ -22,22 +22,20 @@ such as:
     c create a new window
     , rename the current window
     w list windows
-    % split horizontally
-    " split vertically
-    z maximaze the current pane(z again to back normal)
     n change to the next window
     p change to the previous window
     0 to 9 select windows 0 through 9
 
 #### Panes
 
-    % create a horizontal pane
-    " create a vertical pane
+    - create a horizontal pane
+    | create a vertical pane
     h move to the left pane. *
     j move to the pane below *
     l move to the right pane *
     k move to the pane above *
-    k move to the pane above *
+    H,J,L,K resize the pane size to 4 directions
+    z maximaze the current pane(z again to back normal)
     q show pane numbers
     o toggle between panes
     } swap with next pane
