@@ -3,8 +3,6 @@
 
 * **Please backup your configuration before run bellow command**
 
-* Get the configuration:
-
         git clone https://github.com/rmrf/vimrc.git  ~/vimrc
         cd ~
         unlink ~/.vimrc; ln -s ~/vimrc/vimrc_short_version ~/.vimrc
@@ -14,6 +12,10 @@
         unlink ~/.irbrc; ln -s ~/vimrc/ruby/dotirbrc ~/.irbrc
 
 
-## vim configuration powerful 
+## vim with powerful configuration
 
 Use https://github.com/rmrf/spf13-vim-3 
+
+## Tmux
+
+Please check README.md inside tmux folder

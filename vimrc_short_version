@@ -2,7 +2,7 @@ set paste
 set nocompatible               " be iMproved
 
 " press c to comment current line 
-nmap c ^i#<Esc>j
+" nmap c ^i#<Esc>j
 
 set foldmethod=indent
 set foldlevel=99
