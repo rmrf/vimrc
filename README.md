@@ -1,45 +1,48 @@
-
 # 基本安装
 
 * **Please backup your configuration before run bellow command**
 
-        git clone https://github.com/rmrf/vimrc.git  ~/vimrc
-        cd ~
-        unlink ~/.vimrc; ln -s ~/vimrc/vimrc_short_version ~/.vimrc
-        unlink ~/.bash_profile; ln -s ~/vimrc/bash/linux_bash_profile ~/.bash_profile
-        unlink ~/.tmux.conf; ln -s ~/vimrc/tmux/tmux.conf ~/.tmux.conf
-        mkdir -p ~/.pip; unlink ~/.pip/pip.conf; ln -s ~/vimrc/pip/pip.conf ~/.pip/pip.conf
-        unlink ~/.irbrc; ln -s ~/vimrc/ruby/dotirbrc ~/.irbrc
+
+    git clone https://github.com/rmrf/vimrc.git  ~/vimrc
+    cd ~
+    unlink ~/.vimrc; ln -s ~/vimrc/vimrc_short_version ~/.vimrc
+    unlink ~/.bash_profile; ln -s ~/vimrc/bash/linux_bash_profile ~/.bash_profile
+    unlink ~/.tmux.conf; ln -s ~/vimrc/tmux/tmux.conf ~/.tmux.conf
+    mkdir -p ~/.pip; unlink ~/.pip/pip.conf; ln -s ~/vimrc/pip/pip.conf ~/.pip/pip.conf
+    unlink ~/.irbrc; ln -s ~/vimrc/ruby/dotirbrc ~/.irbrc
 
 
-## Tmux 相关
+
+### Tmux 相关
 
 Please check README.md inside tmux folder
 
 # 使用 spf13-vim 
 
- * Follow the instruction of https://github.com/spf13/spf13-vim, install it first.
- * Replace .vimrc.local with ours
+ 1. Follow the instruction of https://github.com/spf13/spf13-vim, install it first.
+ 2. Replace .vimrc.local with ours
+```bash
+unlink ~/.vimrc.local; ln -s ~/vimrc/vimrc.local ~/.vimrc.local
+```
 
-    unlink ~/.vimrc.local; ln -s ~/vimrc/vimrc.local ~/.vimrc.local
-
-
-## golang
+### golang
 
     :GoInstallBinaries
 
-## YouCompleteMe under Ubuntu:
+### YouCompleteMe under Ubuntu:
 
-    运行 vim，然后 :version 检查是否 +python3
-    然后确保 vimrc.local中的 youcomleteme的配置都使用 python3
+运行 vim，然后 `:version` 检查是否 `+python3`
+因为我们的 `vimrc.local` 中的 youcomleteme 的配置都使用 python3
 
-    sudo apt-get install python3-dev exuberant-ctags
-    cd ~/.vim/bundl/YouCompleteMe
-    python3 ./install.py
+```bash
+sudo apt-get install python3-dev exuberant-ctags
+cd ~/.vim/bundl/YouCompleteMe
+python3 ./install.py
+```
 
-## Powerline under Ubuntu:
+### Powerline under Ubuntu:
 
-    check http://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin
+check http://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin
 
 
 ### Some VIM Usage Memo
