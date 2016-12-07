@@ -1,0 +1,136 @@
+set fileencodings=utf-8,ucs-bom,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set nospell     " spell check off
+au FileType javascript,html set nonumber    " set no line number when opening a javascript or html file
+
+" java completion2
+"au FileType java set omnifunc=javacomplete#Complete 
+"nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+"imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+"nmap <F5> <Plug>(JavaComplete-Imports-Add)
+"imap <F5> <Plug>(JavaComplete-Imports-Add)
+"nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+"imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+"nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+"imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+
+au FileType c,cpp,java,python map = :Autoformat<CR>
+"let g:JavaComplete_JavaCompiler="/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/bin/javac"
+let g:syntastic_python_pylint_post_args="--max-line-length=79"
+
+set scrolljump=8
+set scrolloff=5
+
+set wrap        " wrap long lines
+
+" set qml & qmake comment for NERD Commenter
+let g:NERDCustomDelimiters = {
+    \ 'qmake': {'left': '#'},
+    \ 'qml': {'left': '//', 'leftAlt': '/*', 'rightAlt': '*/'}
+    \}
+
+let g:syntastic_cpp_compiler = 'clang++' "change the compiler to g++ to support c++11
+let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++' "set the options of g++ to support c++11
+autocmd FileType cpp let g:ycm_global_ycm_extra_conf = '~/.spf13-vim-3/.ycm_extra_conf_cpp.py'
+autocmd FileType c let g:ycm_global_ycm_extra_conf = '~/.spf13-vim-3/.ycm_extra_conf_c.py'
+"let g:ycm_filepath_completion_use_working_dir=1
+
+"let g:easytags_dynamic_files = 1 "Turned off due to the large qt tag file
+let g:easytags_auto_highlight = 0
+let g:easytags_auto_update = 0
+let g:easytags_file = '~/.vimtags'
+let g:easytags_async = 1
+
+set tags=./.tags;,~/Documents/.qtvtags;,~/.vimtags
+
+map <Leader>/ <Plug>(easymotion-sn)
+
+set laststatus=2 " Always display the statusline in all windows
+"set showtabline=2 " Always display the tabline, even if there is only one tab
+set noshowmode
+
+colorscheme PaperColor
+
+syntax sync minlines=256
+syntax sync maxlines=2048
+
+set lazyredraw
+
+nmap <F8> :TagbarToggle<CR>
+
+let g:ycm_key_invoke_completion = '<C-UP>'
+
+"let g:AutoPairsFlyMode = 1
+
+if has('gui_running')
+    set lines=60        " 60 lines of text
+    let g:AutoPairsShortcutBackInsert = '<D-i>'
+    inoremap <A-h> <Esc>h
+    inoremap <A-j> <Esc>j
+    inoremap <A-k> <Esc>k
+    inoremap <A-l> <Esc>l
+    inoremap <A-u> <Esc>u
+    inoremap <A-o> <Esc>o
+else 
+    let g:AutoPairsShortcutBackInsert = 'i'
+endif
+
+let g:go_fmt_autosave = 0
+
+let g:pymode_python = 'python3'
+let g:pymode_lint = 1
+let g:pymode = 1 
+
+" Pep8 error auto fix
+nmap <leader>f :PymodeLintAuto<CR>
+
+"let g:pymode_rope = 1
+"let g:pymode_rope_complete_on_dot = 0
+"
+"let b:python_version2 = 0
+"let g:python_highlight_all = 1
+let g:ycm_python_binary_path = 'python3'
+let g:ycm_server_python_interpreter = 'python3'
+" Reset the default syntastic python checker, default is python2
+" Pymode will take control of it
+let g:syntastic_python_checkers = []
+
+au FileType yaml set tabstop=2
+au FileType yaml set softtabstop=2
+au FileType yaml set shiftwidth=2
+
+if OSX() && has("gui_running")
+    "set guifont=Source\ Code\ Pro\ Semibold:h13,Andale\ Mono\ Regular:h12,Menlo\ Regular:h11,Consolas\ Regular:h12,Courier\ New\ Regular:h14
+    set guifont=Menlo\ Regular:h17
+endif
+
+" disable all scroll bars
+set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
+
+" map ',z' to ':Dash' if dash.vim is loaded
+au VimEnter * if exists(':Dash') | exe "map <leader>z :Dash<CR>" | endif
+
+let g:syntastic_auto_loc_list = 3
+let g:syntastic_go_checkers = ['go']
+
+function! SyntasticCheckHook(errors)
+    if !empty(a:errors)
+        let g:syntastic_loc_list_height = min([len(a:errors), 10])
+    endif
+endfunction
+
+
+
+" vim-go
+au FileType go nunmap <leader>gv
+au FileType go nmap <leader>gv <Plug>(go-def-vertical)
+
+"let g:powerline_loaded = 1
+"
+"防止保存当前session 中set的配置
+let g:spf13_no_views = 1 
+
+
+let NERDTreeQuitOnOpen=0
