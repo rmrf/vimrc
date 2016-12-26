@@ -144,7 +144,7 @@ export PATH=$PATH:/usr/local/go/bin:$GOROOT/bin:$GOPATH/bin
 
 
 export JAVA_HOME=/opt/java/default
-export PATH=$PATH:$JAVA_HOME/bin:/opt/java/apache-maven-3.3.9/bin:~/Tools/Arc/arcanist/bin
+export PATH=$PATH:$JAVA_HOME/bin:/opt/java/apache-maven-3.3.9/bin:/opt/phabricator/arcanist/bin
 
 
 
@@ -161,3 +161,5 @@ if ! ps aux |grep $(whoami) |grep ssh-agent |grep -v grep >/dev/null; then ssh-a
 ln -sf $(find /tmp -maxdepth 2 -type s -name "agent*" -user $USER -printf '%T@ %p\n' 2>/dev/null |sort -n|tail -1|cut -d' ' -f2) ~/.ssh/ssh_auth_sock
 
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+
+export EDITOR=vim

@@ -74,14 +74,13 @@ else
     let g:AutoPairsShortcutBackInsert = 'i'
 endif
 
-let g:go_fmt_autosave = 0
 
 let g:pymode_python = 'python3'
 let g:pymode_lint = 1
 let g:pymode = 1 
 
 " Pep8 error auto fix
-nmap <leader>f :PymodeLintAuto<CR>
+au FileType  python nmap <leader>f :PymodeLintAuto<CR>
 
 "let g:pymode_rope = 1
 "let g:pymode_rope_complete_on_dot = 0
@@ -126,6 +125,10 @@ endfunction
 " vim-go
 au FileType go nunmap <leader>gv
 au FileType go nmap <leader>gv <Plug>(go-def-vertical)
+au FileType go nmap <leader>f :GoFmt<CR>
+let g:go_fmt_autosave = 0
+let g:go_fmt_command = "goimports"
+
 
 "let g:powerline_loaded = 1
 "
