@@ -6,7 +6,9 @@ set columns=136
 set lines=50
 
 
-set guifont=Monospace\ 11
+"set guifont=Monospace:14
+set guifont=Menlo\ Regular:h14
+
 
 "---------------------------------------------
 " ENCODING SETTINGS
@@ -16,4 +18,10 @@ set termencoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8,ucs-bom,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set fileformat=unix
+
+
+syntax enable
+set background=dark
+colorscheme solarized
+
 

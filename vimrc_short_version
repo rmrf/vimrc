@@ -98,3 +98,5 @@ endfun
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 syntax on
 
+
+set guifont=Monospace:14

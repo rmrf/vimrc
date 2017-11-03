@@ -72,7 +72,7 @@ git config --global alias.staaash 'stash --all'
 alias gitl="git lg| less -R"
 
 #alias vi="/usr/local/Cellar/macvim/7.4-104/bin/mvim -v"
-alias vi="/usr/local/bin/vim"
+alias vi="/Applications/MacVim.app/Contents/MacOS/Vim -p"
 alias vim=vi
 alias lst="find .|sed -e 's#[^/]*/#|_ #g;s#_ |#  |#g;'"
 
@@ -87,10 +87,6 @@ addpath ()
 PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
 export PATH
 
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-source ~/BashEnv/joyent_env.sh
 
 
 if [ -f /usr/local/etc/bash_completion ]; then
@@ -128,11 +124,18 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
+# homebrew
+
+export PATH=/usr/local/homebrew/bin:$PATH
 
 
 # Golang
 export GOROOT=/usr/local/go  
 export GOPATH=~/gocode
+export PATH=$PATH:$GOROOT/bin:
+
+#VS Code
+export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
 
 #[[ -s "/Users/yoqian/.gvm/scripts/gvm" ]] && source "/Users/yoqian/.gvm/scripts/gvm"
 
@@ -144,3 +147,18 @@ export PATH=$PATH:~/Tools/arcanist/bin
 export PATH=$PATH:$GOPATH/bin
 
 
+# pass
+source /usr/local/homebrew/etc/bash_completion.d/pass
+
+
+# git chinese 
+export LESSCHARSET=utf-8
+
+# Maven
+export PATH=$PATH:~/Tools/apache-maven-3.5.0/bin
+
+# Arch
+
+export PATH=$PATH:~/Tools/arcanist/bin
+
+export EDITOR=vi
