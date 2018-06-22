@@ -100,3 +100,14 @@ syntax on
 
 
 set guifont=Monospace:14
+
+execute pathogen#infect()
+
+map <C-e> :NERDTreeToggle<CR>
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let NERDTreeShowBookmarks=1
+
+let g:neocomplete#enable_at_startup = 1
+
+autocmd FilterWritePre * if &diff | setlocal wrap< | endif

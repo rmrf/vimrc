@@ -90,7 +90,7 @@ source ~/vimrc/bash/git-completion.bash
 
 export TERM="xterm-256color"
 #PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \[\033[0;31m\]$(__git_ps1 "(%s)") \[\033[00m\]\$ '
-PS1='[\[\033[32m\]\w]\[\033[0m\]\n\[\033[1;36m\]\u\[\033[1;33m\]$(__git_ps1 "(%s)")-> \[\033[0m\]'
+PS1='[\[\033[32m\]\w]\[\033[0m\]\n\[\033[1;36m\]\u\[\033[1;33m\]$(__git_ps1 "(%s)")@\h-> \[\033[0m\]'
 
 
 
@@ -146,7 +146,7 @@ export PATH=$PATH:/usr/local/go/bin:$GOROOT/bin:$GOPATH/bin
 
 
 export JAVA_HOME=/opt/java/default
-export PATH=$PATH:$JAVA_HOME/bin:/opt/java/apache-maven-3.5.2/bin:~/Tools/arcanist/bin
+export PATH=$PATH:$JAVA_HOME/bin:/opt/java/apache-maven-3.5.2/bin:~/Tools/arcanist/bin:/opt/gradle-4.7/bin
 
 
 
@@ -170,3 +170,17 @@ export CONSUL_HTTP_ADDR=192.168.1.20:8500
 
 # GCP
 export PATH=$PATH:~/Cloud/GCP/google-cloud-sdk/bin
+
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+alias lediff="arc diff --reviewers clchen,zlji,zyzhou,cloudsugar,yb.dong,weikuan.zhou,sky.zhang"
+
+
+
+source <(kubectl completion bash) # setup autocomplete in bash, bash-completion package should be installed first.
+
